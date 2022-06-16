@@ -12,7 +12,7 @@ export const fetchRoomList = () => {
 export const fetchRoomDetail = (roomId) => {
   return roomAPI({
     method: 'get',
-    url: `/rooms/${roomId}`
+    url: `/room/${roomId}`
   });
 };
 
