@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 // api
 import api from '@/api';
 // components
-import ImgShower from '@/components/ImgShower';
+import ImgShower from '@/components/RoomDetail/ImgShower';
 
 export default function RoomDetail() {
   const [roomInfo, setRoomInfo] = useState({});
