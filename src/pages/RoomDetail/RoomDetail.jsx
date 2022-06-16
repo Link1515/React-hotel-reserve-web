@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import api from '@/api';
 // components
 import ImgShower from '@/components/RoomDetail/ImgShower';
+import InfoShower from '@/components/RoomDetail/InfoShower';
 
 export default function RoomDetail() {
   const [roomInfo, setRoomInfo] = useState({});
@@ -23,6 +24,7 @@ export default function RoomDetail() {
   return (
     <div>
       <ImgShower roomInfo={roomInfo} />
+      <InfoShower roomInfo={roomInfo} />
     </div>
   );
 }
