@@ -1,0 +1,7 @@
+.imgThumb {
+  @apply cursor-pointer relative before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:duration-500 before:hover:bg-black before:hover:bg-opacity-25;
+}
+
+.imgThumb.active {
+  @apply before:bg-black before:bg-opacity-25;
+}
