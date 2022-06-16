@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 export default function Card(props) {
-  const { name, imageUrl, normalDayPrice, holidayPrice } = props.roomData;
+  const { id, name, imageUrl, normalDayPrice, holidayPrice } = props.roomData;
 
   return (
-    <div className="group relative w-1/3 h-[400px] overflow-hidden">
+    <Link to={`/${id}`} className="group relative w-full md:w1/2 lg:w-1/3 h-[400px] overflow-hidden">
       <img src={imageUrl} alt={name} className="w-full h-full object-cover object-bottom" />
       <div className="absolute bottom-[-78px] inset-x-0 bg-black bg-opacity-50 text-center duration-500 group-hover:bottom-0 group-hover:bg-white">
         <h2 className="py-5 text-white duration-500 group-hover:text-blue-700 group-hover:font-bold">{name}</h2>
@@ -17,6 +19,6 @@ export default function Card(props) {
           </li>
         </ul>
       </div>
-    </div>
+    </Link>
   );
 }
