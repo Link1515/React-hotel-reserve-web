@@ -8,13 +8,11 @@ import InfoShower from '@/components/RoomDetail/InfoShower';
 
 export default function RoomDetail() {
   const [roomInfo, setRoomInfo] = useState({});
-  const [bookInfo, setBookInfo] = useState({});
   const params = useParams();
 
   const fetchRoomDetail = useCallback(async () => {
     const { data } = await api.room.fetchRoomDetail(params.roomId);
     setRoomInfo(data.room[0]);
-    setBookInfo(data.book);
   }, [params]);
 
   useEffect(() => {
@@ -22,7 +20,7 @@ export default function RoomDetail() {
   }, [fetchRoomDetail]);
 
   return (
-    <div>
+    <div className="mb-[120px]">
       <ImgShower roomInfo={roomInfo} />
       <InfoShower roomInfo={roomInfo} />
     </div>
