@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  body {
+    background-color: #f2f2f2;
+  }
+
   img {
     @apply w-full h-full object-cover;
   }
 }
 
-body {
-  background-color: #f2f2f2;
+@layer utilities {
+  .disabled {
+    filter: invert(88%) sepia(2%) saturate(852%) hue-rotate(0deg) brightness(82%) contrast(87%);
+  }
 }
