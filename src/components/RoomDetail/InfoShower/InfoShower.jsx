@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+// components
 import InputText from '@/components/UI/InputText';
 import RangeDatePicker from '@/components/UI/RangeDatePicker';
+// utils
 import { isEmpty } from '@/utils/utils.js';
+// api
 import api from '@/api';
 
 export default function InfoShower(props) {
@@ -27,6 +33,26 @@ export default function InfoShower(props) {
 
   function haveOrNot(condition) {
     return condition ? '有' : '無';
+  }
+
+  // 表單 schema
+  const schema = yup.object({
+    name: yup.string().required('必填欄位'),
+    tel: yup
+      .string()
+      .required('必填欄位')
+      .matches(/^09\d{8}$/, '格式錯誤'),
+    count: yup.number().required('必填欄位').min(1, '最少需要 1 人')
+  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({ resolver: yupResolver(schema) });
+  // 表單提交
+  function onSubmit(data) {
+    // api.room.reserveRoom(params.roomId, form);
+    console.log(data);
   }
 
   if (!isEmpty(props.roomInfo)) {
@@ -169,24 +195,16 @@ export default function InfoShower(props) {
                 <p className="text-2xl text-white">$NT {holidayPrice} / 晚</p>
               </div>
             </div>
-            <form className="px-10 py-8 bg-white">
+            <form onSubmit={handleSubmit(onSubmit)} className="px-10 py-8 bg-white">
               <div className="mb-4">
                 <p className="mb-2">姓名</p>
-                <InputText
-                  onChange={(e) => {
-                    form.name = e.target.value;
-                    setForm({ ...form });
-                  }}
-                />
+                <InputText label="name" register={register} />
+                {errors.name && <p className="text-[red] mt-2 ml-2">{errors.name.message}</p>}
               </div>
               <div className="mb-4">
                 <p className="mb-2">電話</p>
-                <InputText
-                  onChange={(e) => {
-                    form.tel = e.target.value;
-                    setForm({ ...form });
-                  }}
-                />
+                <InputText label="tel" register={register} />
+                {errors.tel && <p className="text-[red] mt-2 ml-2">{errors.tel.message}</p>}
               </div>
               <div className="mb-4">
                 <p className="mb-2">日期</p>
@@ -206,18 +224,11 @@ export default function InfoShower(props) {
               </div>
               <div className="mb-10">
                 <p className="mb-2">房客</p>
-                <InputText
-                  onChange={(e) => {
-                    form.tel = e.target.value;
-                    setForm({ ...form });
-                  }}
-                  placeholder="1 人"
-                />
+                <InputText label="count" register={register} placeholder="1 人" type="number" defaultValue={1} />
+                {errors.count && <p className="text-[red] mt-2 ml-2">{errors.count.message}</p>}
               </div>
               <button
-                onClick={() => {
-                  api.room.reserveRoom(params.roomId, form);
-                }}
+                type="submit"
                 className="w-full py-4 block bg-[#508DF6] text-white rounded-md hover:bg-blue-600 duration-500"
               >
                 預訂房間
