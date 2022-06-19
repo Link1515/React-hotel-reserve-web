@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Home />} />
-        <Route path=":roomId" element={<RoomDetail />} />
+        <Route path="/room/:roomId" element={<RoomDetail />} />
       </Routes>
     </div>
   );
