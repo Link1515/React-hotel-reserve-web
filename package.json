@@ -1,6 +1,7 @@
 {
   "name": "hotel-reserve-web",
   "version": "0.1.0",
+  "homepage": "https://link1515.github.io/React-hotel-reserve-web /",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
