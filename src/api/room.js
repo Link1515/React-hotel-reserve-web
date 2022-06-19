@@ -20,7 +20,7 @@ export const fetchRoomDetail = (roomId) => {
 export const reserveRoom = (roomId, data) => {
   return serverApi({
     method: 'post',
-    url: `/rooms/${roomId}`,
+    url: `/room/${roomId}`,
     data
   });
 };
