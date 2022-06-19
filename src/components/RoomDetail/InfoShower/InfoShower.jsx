@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -24,13 +23,6 @@ export default function InfoShower(props) {
     Queen: '皇后床'
   };
 
-  // 表單資料
-  const [form, setForm] = useState({
-    name: '',
-    tel: '',
-    date: []
-  });
-
   function haveOrNot(condition) {
     return condition ? '有' : '無';
   }
@@ -42,17 +34,23 @@ export default function InfoShower(props) {
       .string()
       .required('必填欄位')
       .matches(/^09\d{8}$/, '格式錯誤'),
-    count: yup.number().required('必填欄位').min(1, '最少需要 1 人')
+    count: yup.number().required('必填欄位').min(1, '最少需要 1 人'),
+    startDate: yup.string().required('必填入住日期'),
+    endDate: yup.string().required('必填退房日期')
   });
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    control
   } = useForm({ resolver: yupResolver(schema) });
   // 表單提交
-  function onSubmit(data) {
-    // api.room.reserveRoom(params.roomId, form);
-    console.log(data);
+  function onSubmit({ name, tel, startDate, endDate }) {
+    api.room.reserveRoom(params.roomId, {
+      name,
+      tel,
+      date: [startDate, endDate]
+    });
   }
 
   if (!isEmpty(props.roomInfo)) {
@@ -208,19 +206,9 @@ export default function InfoShower(props) {
               </div>
               <div className="mb-4">
                 <p className="mb-2">日期</p>
-                <RangeDatePicker
-                  onChange={(startDate = null, endDate = null) => {
-                    if (startDate) {
-                      form.date[0] = startDate;
-                      setForm({ ...form });
-                    }
-
-                    if (endDate) {
-                      form.date[1] = endDate;
-                      setForm({ ...form });
-                    }
-                  }}
-                />
+                <RangeDatePicker control={control} />
+                {errors.startDate && <p className="text-[red] mt-2 ml-2">{errors.startDate.message}</p>}
+                {errors.endDate && <p className="text-[red] mt-2 ml-2">{errors.endDate.message}</p>}
               </div>
               <div className="mb-10">
                 <p className="mb-2">房客</p>
