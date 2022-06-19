@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import Swal from 'sweetalert2';
 // components
 import InputText from '@/components/UI/InputText';
 import RangeDatePicker from '@/components/UI/RangeDatePicker';
@@ -45,12 +46,27 @@ export default function InfoShower(props) {
     control
   } = useForm({ resolver: yupResolver(schema) });
   // 表單提交
-  function onSubmit({ name, tel, startDate, endDate }) {
-    api.room.reserveRoom(params.roomId, {
-      name,
-      tel,
-      date: [startDate, endDate]
-    });
+  async function onSubmit({ name, tel, startDate, endDate }) {
+    try {
+      await api.room.reserveRoom(params.roomId, {
+        name,
+        tel,
+        date: [startDate, endDate]
+      });
+      Swal.fire({
+        title: '成功',
+        icon: 'success',
+        text: '預約成功'
+      });
+    } catch (error) {
+      console.log(error);
+      const errMsg = error.response.data.message;
+      Swal.fire({
+        title: '失敗',
+        icon: 'error',
+        text: errMsg
+      });
+    }
   }
 
   if (!isEmpty(props.roomInfo)) {
