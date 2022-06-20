@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/React-hotel-reserve-web/static/css/main.df8a668d.css",
-    "main.js": "/React-hotel-reserve-web/static/js/main.248c1816.js",
-    "static/media/wind.svg": "/React-hotel-reserve-web/static/media/wind.d5f8a7a97f0fe863bbc47520a5947b55.svg",
-    "static/media/noSmoke.svg": "/React-hotel-reserve-web/static/media/noSmoke.f09e4efa1551cf3db645acd7d97fd2fd.svg",
-    "static/media/baby.svg": "/React-hotel-reserve-web/static/media/baby.45e0b3b57c4cc4e0f435122c97f661ff.svg",
-    "static/media/refrigerator.svg": "/React-hotel-reserve-web/static/media/refrigerator.70651cbf2cc6cefc138a41e19c153965.svg",
-    "static/media/dog.svg": "/React-hotel-reserve-web/static/media/dog.607733013cd1f84fd0cabb85dd9e5ba2.svg",
-    "static/media/wifi.svg": "/React-hotel-reserve-web/static/media/wifi.cd05c414ee6651c9b33971a4bd8d9d12.svg",
-    "static/media/serviceBell.svg": "/React-hotel-reserve-web/static/media/serviceBell.31c80ae39e680750e6126078b247cb70.svg",
-    "index.html": "/React-hotel-reserve-web/index.html",
-    "static/media/phone.svg": "/React-hotel-reserve-web/static/media/phone.91fd87a8e0d3b918af6acec337c9a395.svg",
-    "static/media/mountain.svg": "/React-hotel-reserve-web/static/media/mountain.6bb6440037d3545fd9e75c041c1af9be.svg",
-    "static/media/sofa.svg": "/React-hotel-reserve-web/static/media/sofa.4a758afa55d532eae674e988e3aaa36c.svg",
-    "static/media/goblet.svg": "/React-hotel-reserve-web/static/media/goblet.c8fc4c9c6cf5b17ab6ebe64e13fbcc53.svg",
-    "static/media/cup.svg": "/React-hotel-reserve-web/static/media/cup.8871df18466f63fb10605491f857b596.svg",
-    "static/media/arrow-right.svg": "/React-hotel-reserve-web/static/media/arrow-right.1a4fd3603ace437da4960f4058dcbeff.svg",
-    "main.df8a668d.css.map": "/React-hotel-reserve-web/static/css/main.df8a668d.css.map",
-    "main.248c1816.js.map": "/React-hotel-reserve-web/static/js/main.248c1816.js.map"
+    "main.css": "/static/css/main.df8a668d.css",
+    "main.js": "/static/js/main.d36916a4.js",
+    "static/media/wind.svg": "/static/media/wind.d5f8a7a97f0fe863bbc47520a5947b55.svg",
+    "static/media/noSmoke.svg": "/static/media/noSmoke.f09e4efa1551cf3db645acd7d97fd2fd.svg",
+    "static/media/baby.svg": "/static/media/baby.45e0b3b57c4cc4e0f435122c97f661ff.svg",
+    "static/media/refrigerator.svg": "/static/media/refrigerator.70651cbf2cc6cefc138a41e19c153965.svg",
+    "static/media/dog.svg": "/static/media/dog.607733013cd1f84fd0cabb85dd9e5ba2.svg",
+    "static/media/wifi.svg": "/static/media/wifi.cd05c414ee6651c9b33971a4bd8d9d12.svg",
+    "static/media/serviceBell.svg": "/static/media/serviceBell.31c80ae39e680750e6126078b247cb70.svg",
+    "static/media/phone.svg": "/static/media/phone.91fd87a8e0d3b918af6acec337c9a395.svg",
+    "static/media/mountain.svg": "/static/media/mountain.6bb6440037d3545fd9e75c041c1af9be.svg",
+    "static/media/sofa.svg": "/static/media/sofa.4a758afa55d532eae674e988e3aaa36c.svg",
+    "index.html": "/index.html",
+    "static/media/goblet.svg": "/static/media/goblet.c8fc4c9c6cf5b17ab6ebe64e13fbcc53.svg",
+    "static/media/cup.svg": "/static/media/cup.8871df18466f63fb10605491f857b596.svg",
+    "static/media/arrow-right.svg": "/static/media/arrow-right.1a4fd3603ace437da4960f4058dcbeff.svg",
+    "main.df8a668d.css.map": "/static/css/main.df8a668d.css.map",
+    "main.d36916a4.js.map": "/static/js/main.d36916a4.js.map"
   },
   "entrypoints": [
     "static/css/main.df8a668d.css",
-    "static/js/main.248c1816.js"
+    "static/js/main.d36916a4.js"
   ]
 }
