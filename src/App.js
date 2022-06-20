@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import RoomDetail from './pages/RoomDetail';
 import NotFound from './pages/NotFound';
 // components
-import Header from './components/Header';
+import Header from '@/components/Header';
 
 function App() {
   return (
